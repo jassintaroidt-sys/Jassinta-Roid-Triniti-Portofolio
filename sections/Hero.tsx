@@ -21,7 +21,7 @@ export const Hero: React.FC = () => {
      {/* Z-10: GIF Layer */}
 <div className="absolute inset-0 z-10 pointer-events-none flex items-center justify-center overflow-hidden opacity-45 mix-blend-multiply">
   <img 
-    src="/images/hero_animation.gif" 
+    src={`${import.meta.env.BASE_URL}images/hero_animation.gif`} 
     alt="Hero Animation" 
     className="min-w-full min-h-full object-cover"
   />

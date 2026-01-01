@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { IntersectionWrapper } from '../components/IntersectionObserver';
 
@@ -11,7 +10,7 @@ export const AboutMe: React.FC = () => {
             <IntersectionWrapper>
               <div className="bg-transparent overflow-hidden">
                 <img 
-                  src="/images/foto_jassinta_berdiri.png" 
+                  src={`${import.meta.env.BASE_URL}images/foto_jassinta_berdiri.png`} 
                   alt="Jassinta Portrait Standing Transparent" 
                   className="w-full aspect-[1080/1920] object-contain transition-transform duration-700 hover:scale-[1.02]"
                 />
@@ -20,7 +19,7 @@ export const AboutMe: React.FC = () => {
             <IntersectionWrapper>
               <div className="bg-transparent overflow-hidden">
                 <img 
-                  src="/images/foto_jassinta_duduk.png" 
+                  src={`${import.meta.env.BASE_URL}images/foto_jassinta_duduk.png`}
                   alt="Jassinta Portrait Sitting Transparent" 
                   className="w-full aspect-[408/612] object-contain transition-transform duration-700 hover:scale-[1.02]"
                 />
@@ -30,7 +29,9 @@ export const AboutMe: React.FC = () => {
           
           <div className="w-full lg:w-1/2 pt-16 lg:pt-0">
             <IntersectionWrapper>
-              <h2 className="text-4xl md:text-5xl font-black text-brand-primary mb-12 border-b-8 border-brand-accent/10 pb-6 inline-block uppercase tracking-tighter">About Me</h2>
+              <h2 className="text-4xl md:text-5xl font-black text-brand-primary mb-12 border-b-8 border-brand-accent/10 pb-6 inline-block uppercase tracking-tighter">
+                About Me
+              </h2>
               <p className="text-xl md:text-2xl text-brand-secondary leading-relaxed font-light mb-12 italic border-l-4 border-brand-accent pl-8">
                 “I’m a content creator and visual designer with over one year of experience working across digital platforms. I combine strategy, creativity, and clarity to help brands communicate better.”
               </p>

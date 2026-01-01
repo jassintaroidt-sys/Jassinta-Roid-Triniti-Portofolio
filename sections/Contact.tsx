@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { IntersectionWrapper } from '../components/IntersectionObserver';
 import { Button } from '../components/Button';
@@ -8,7 +7,9 @@ export const Contact: React.FC = () => {
     <section id="contact" className="py-32 bg-brand-alternate scroll-mt-32">
       <div className="container mx-auto px-6 text-center">
         <IntersectionWrapper className="mb-20">
-          <h2 className="text-4xl md:text-5xl font-black text-brand-primary mb-8 uppercase tracking-tighter">Let’s Work Together</h2>
+          <h2 className="text-4xl md:text-5xl font-black text-brand-primary mb-8 uppercase tracking-tighter">
+            Let’s Work Together
+          </h2>
           <h3 className="text-xl md:text-2xl text-brand-secondary font-medium max-w-2xl mx-auto opacity-70">
             Open for collaboration, freelance projects, professional opportunities.
           </h3>
@@ -42,27 +43,15 @@ export const Contact: React.FC = () => {
 
         {/* Social Feed Display */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
-          <IntersectionWrapper className="aspect-[1080/2408] bg-brand-bg rounded-[2.5rem] overflow-hidden group shadow-2xl relative z-0">
-            <img 
-              src="/images/ss1_travel_tiktok.jpg" 
-              className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" 
-              alt="TikTok Beauty"
-            />
-          </IntersectionWrapper>
-          <IntersectionWrapper className="aspect-[1080/2408] bg-brand-bg rounded-[2.5rem] overflow-hidden group shadow-2xl relative z-0">
-            <img 
-              src="/images/ss2_kecantikan_ig.jpg" 
-              className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" 
-              alt="TikTok Travel"
-            />
-          </IntersectionWrapper>
-          <IntersectionWrapper className="aspect-[1080/2408] bg-brand-bg rounded-[2.5rem] overflow-hidden group shadow-2xl hidden md:block relative z-0">
-            <img 
-              src="/images/ss3_kecantikan_tiktok.jpg" 
-              className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" 
-              alt="Instagram Feed"
-            />
-          </IntersectionWrapper>
+          {['ss1_travel_tiktok.jpg', 'ss2_kecantikan_ig.jpg', 'ss3_kecantikan_tiktok.jpg'].map((file, i) => (
+            <IntersectionWrapper key={i} className="aspect-[1080/2408] bg-brand-bg rounded-[2.5rem] overflow-hidden group shadow-2xl relative z-0">
+              <img 
+                src={`${import.meta.env.BASE_URL}images/${file}`} 
+                className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" 
+                alt={`Social Feed ${i + 1}`}
+              />
+            </IntersectionWrapper>
+          ))}
         </div>
       </div>
 
